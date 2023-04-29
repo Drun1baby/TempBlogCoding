@@ -7,6 +7,8 @@ import com.star.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @Description: 用户业务层接口实现类
  * @Date: Created in 23:01 2020/5/26
@@ -37,6 +39,11 @@ public class UserServiceImpl implements UserService {
     public User checkType(String username) {
         User user = userDao.findTypeByUsername(username);
         return user;
+    }
+
+    @Override
+    public List<User> getAllUser() {
+        return userDao.getAllUser();
     }
 
 }

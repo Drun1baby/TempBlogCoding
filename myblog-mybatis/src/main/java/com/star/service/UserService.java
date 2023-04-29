@@ -1,6 +1,9 @@
 package com.star.service;
 
 import com.star.entity.User;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @Description: 用户业务层接口
@@ -15,4 +18,6 @@ public interface UserService {
 
     User checkType(String username);
 
+    @Transactional
+    List<User> getAllUser();
 }

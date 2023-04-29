@@ -1,4 +1,4 @@
-package com.star.controller;
+package com.star.controller.user;
 
 import com.star.entity.User;
 import com.star.service.UserService;
