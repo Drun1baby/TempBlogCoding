@@ -16,8 +16,7 @@
   <div class="ui container">
     <div class="ui inverted secondary stackable menu">
       <h2 class="ui olive header item" style="font-family: STSong">管理后台</h2>
-      <a href="#" th:href="@{/admin/index}" class="active m-item item"><i class="home icon"></i>管理首页</a>
-      <a href="#" th:href="@{/admin/userManage}" class="m-item item m-mobile-hide"><i class="home icon"></i>用户管理</a>
+      <a href="#" th:href="@{/admin/userManage}" class="active m-item item m-mobile-hide"><i class="home icon"></i>用户管理</a>
       <div class="right m-item m-mobile-hide menu">
         <div class="ui dropdown  item">
           <div class="text">
@@ -42,8 +41,8 @@
   <div class="ui attached pointing menu">
     <div class="ui container">
       <div class="right menu">
-        <a href="#" th:href="@{/admin/usermanage/input}" class="item">新增</a>
-        <a href="#" th:href="@{/admin/usermanage}" class="teal active item">列表</a>
+        <a href="#" th:href="@{/admin/userManage/input}" class="item">新增</a>
+        <a href="#" th:href="@{/admin/userManage}" class="teal active item">列表</a>
       </div>
     </div>
   </div>
@@ -71,10 +70,10 @@
       <tbody>
       <tr align="center" th:each="user,iterStat : ${pageInfo.list}">
         <td th:text="${iterStat.count}">1</td>
-        <td th:text="${user.name}">ding</td>
+        <td th:text="${user.username}">ding</td>
         <td>
-          <a href="#" th:href="@{/admin/usermanage/{id}/input(id=${user.id})}" class="ui mini teal basic button">编辑</a>
-          <a href="#" th:href="@{/admin/usermanage/{id}/delete(id=${user.id})}"  onclick="return confirm('确定要删除该分类吗？三思啊! 删了可就没了！')" class="ui mini red basic button">删除</a>
+          <a href="#" th:href="@{/admin/userManage/{id}/input(id=${user.id})}" class="ui mini teal basic button">编辑</a>
+          <a href="#" th:href="@{/admin/userManage/{id}/delete(id=${user.id})}"  onclick="return confirm('确定要删除该分类吗？三思啊! 删了可就没了！')" class="ui mini red basic button">删除</a>
         </td>
       </tr>
       </tbody>
@@ -83,7 +82,7 @@
         <th colspan="6" >
           <div class="ui inverted divided stackable grid">
             <div class="three wide column" align="center">
-              <a class="item" th:href="@{/admin/usermanage(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}" th:unless="${pageInfo.isFirstPage}">上一页</a>
+              <a class="item" th:href="@{/admin/userManage(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}" th:unless="${pageInfo.isFirstPage}">上一页</a>
             </div>
 
             <div class="ten wide column" align="center">
@@ -91,11 +90,11 @@
             </div>
 
             <div class="three wide column" align="center">
-              <a class="item" th:href="@{/admin/usermanage(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}" th:unless="${pageInfo.isLastPage}">下一页</a>
+              <a class="item" th:href="@{/admin/userManage(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}" th:unless="${pageInfo.isLastPage}">下一页</a>
             </div>
           </div>
           <div align="center">
-            <a href="#" th:href="@{/admin/usermanage/input}">
+            <a href="#" th:href="@{/admin/userManage/input}">
               <button type="button" class="ui teal button m-mobile-wide m-margin-top"><i class="pencil icon"></i>新增</button>
             </a>
           </div>

@@ -6,7 +6,9 @@ import com.star.service.UserService;
 import com.star.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,6 +46,36 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAllUser() {
         return userDao.getAllUser();
+    }
+    @Transactional
+    @Override
+    public int saveUser(User user) {
+        user.setCreateTime(new Date());
+        user.setUpdateTime(new Date());
+        return userDao.saveUser(user);
+    }
+
+    @Transactional
+    @Override
+    public User getUser(Long id) {
+        return userDao.getUser(id);
+    }
+
+    @Override
+    public User getUserByName(String name) {
+        return userDao.getUserByName(name);
+    }
+
+    @Transactional
+    @Override
+    public int updateUser(User user) {
+        return userDao.updateUser(user);
+    }
+
+    @Transactional
+    @Override
+    public void deleteUser(Long id) {
+        userDao.deleteUser(id);
     }
 
 }

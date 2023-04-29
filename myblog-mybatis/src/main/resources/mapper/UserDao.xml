@@ -13,4 +13,41 @@
         where username = #{username};
     </select>
 
+    <!--新增保存用户-->
+    <!--<insert id="saveUser" parameterType="com.star.entity.User">
+        insert into myblog.t_user (id,username,password,avatar,type,nickname,create_time,update_time)
+        values (#{id},#{username},#{password},#{avatar},#{type},#{nickname},#{createTime},
+                #{updateTime});
+    </insert>-->
+    <insert id="saveUser" parameterType="com.star.entity.User">
+        insert into myblog.t_user (username,password,create_time,update_time)
+        values (#{username},#{password},#{createTime},
+                #{updateTime});
+    </insert>
+
+    <!--根据id查询用户-->
+    <select id="getUser" resultType="com.star.entity.User">
+        select id,name from myblog.t_user where id = #{id}
+    </select>
+
+    <!--查询所有分类-->
+    <select id="getAllUser" resultType="com.star.entity.User">
+        select * from myblog.t_user
+    </select>
+
+    <!--根据用户名称来查询-->
+    <select id="getUserByName" resultType="com.star.entity.User">
+        select * from myblog.t_user where username = #{username}
+    </select>
+
+    <!--编辑修改用户-->
+    <update id="updateUser" parameterType="com.star.entity.User">
+        update myblog.t_user set username = #{username} where id = #{id};
+    </update>
+
+    <!--删除用户-->
+    <delete id="deleteUser">
+        delete from myblog.t_user where id = #{id}
+    </delete>
+
 </mapper>

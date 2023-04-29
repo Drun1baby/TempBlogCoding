@@ -19,5 +19,19 @@ public interface UserService {
     User checkType(String username);
 
     @Transactional
+    int saveUser(User user);
+
+    @Transactional
     List<User> getAllUser();
+
+    @Transactional
+    User getUser(Long id);
+
+    User getUserByName(String name);
+
+    @Transactional
+    int updateUser(User user);
+
+    @Transactional
+    void deleteUser(Long id);
 }

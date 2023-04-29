@@ -29,4 +29,19 @@ public interface UserDao {
     User findTypeByUsername(@Param("username") String username);
 
     List<User> getAllUser();
+    //新增保存用户
+    int saveUser(User user);
+
+    //根据id查询用户
+    User getUser(Long id);
+
+
+    //根据用户名称查询用户
+    User getUserByName(String name);
+
+    //编辑修改用户
+    int updateUser(User user);
+
+    //删除用户
+    void deleteUser(Long id);
 }

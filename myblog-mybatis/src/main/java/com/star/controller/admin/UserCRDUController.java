@@ -22,9 +22,11 @@ public class UserCRDUController {
     private UserService userService;
 
     //    分页查询用户列表
-    @GetMapping("/admin/userManage")
+    /*@GetMapping("/admin/userManage")
     public String manageView(){
         //按照排序字段 倒序 排序
-        return "admin/test";
-    }
+        return "admin/userManage";
+
+    }*/
+
 }
