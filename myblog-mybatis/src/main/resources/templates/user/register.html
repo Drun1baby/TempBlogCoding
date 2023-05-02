@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>注册</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link href="../static/img/leaf.png" th:href="@{/images/leaf.png}" rel="icon" type="image/x-ico">
+    <link href="../static/img/leaf.png" th:href="@{/img/leaf.png}" rel="icon" type="image/x-ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -22,7 +22,7 @@
         .container {
             height: 100%;
             /*background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);*/
-            background: url(https://great.wzznft.com/i/2023/05/01/y0fs5i.jpg);
+            background: url(../static/img/bg.jpg);
             background-size: 100% 100%;
         }
         .login-wrapper {
@@ -61,7 +61,7 @@
             padding: 10px;
             width: 100%;
             margin-top: 40px;
-            background-image: linear-gradient(to right, #5e98da, #3f80c7);
+            background-image: linear-gradient(to right, #a6c1ee, #91a9d9);
             color: #fff;
             font-size: large;
             font-family:"华文新魏";
@@ -73,7 +73,7 @@
         }
         a {
             text-decoration-line: none;
-            color: #80a8ce;
+            color: #abc1ee;
         }
         input{
             font-family:"华文新魏";
@@ -86,18 +86,18 @@
 </head>
 <body >
 
-    <form class="container" method="post" action="#" th:action="@{/user/register}">
+    <form class="container" method="post" action="#" th:action="@{/login}">
         <div class="login-wrapper">
-            <div class="header" style="font-family:'方正舒体';color: #40527a">Eliauk注册</div>
+            <div class="header" style="font-family:'方正舒体';color: #40527a">注册</div>
             <div class="form-wrapper">
                 <input type="text" name="username" placeholder="用户名" class="input-item">
                 <input type="password" name="password" placeholder="密码" class="input-item">
                 <button class="btn" style="border: none">注册</button>
             </div>
-            <!--<div class="msg">
+            <div class="msg">
                 已注册？
-                <a style="color: #91a9d9" href="/user/login" action="#" th:href="@{/user/login}">去登录</a>
-            </div>-->
+                <a style="color: #91a9d9" href="/login" action="#" th:action="@{/login}">去登录</a>
+            </div>
         </div>
 
         <!--<div class="ui mini message negative" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></div>-->
